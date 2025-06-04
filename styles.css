@@ -209,17 +209,76 @@ body {
     position: relative;
 }
 
+.profile-image-container {
+    position: relative;
+    margin: 0 auto 1rem;
+    width: 120px;
+    height: 120px;
+}
+
 .profile-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 3rem;
-    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+}
+
+.animated-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.animated-avatar img,
+.animated-avatar canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.animated-avatar .avatar-image {
+    opacity: 1;
+    z-index: 2;
+}
+
+.animated-avatar .real-image {
+    opacity: 0;
+    z-index: 1;
+}
+
+.animated-avatar.show-real .avatar-image {
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+.animated-avatar.show-real .real-image {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.animated-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+@keyframes avatarFlip {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(90deg); }
+    100% { transform: rotateY(0deg); }
+}
+
+.animated-avatar.flipping {
+    animation: avatarFlip 0.8s ease-in-out;
 }
 
 .status-badge {
@@ -957,6 +1016,37 @@ body.dark-theme .theme-toggle {
     color: var(--bg-dark);
 }
 
+/* Mode Toggle Button Styles */
+.mode-toggle {
+    position: fixed;
+    top: 60%;
+    right: 2rem;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.mode-toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+body.dark-theme .mode-toggle {
+    background: var(--primary-color);
+}
+
 /* Smooth transitions for theme switching */
 body,
 .navbar,
@@ -972,7 +1062,263 @@ body,
 
 /* Hide theme toggle on mobile */
 @media (max-width: 768px) {
-    .theme-toggle {
+    .theme-toggle,
+    .mode-toggle {
         display: none;
     }
+}
+
+/* Professional Mode Styles */
+body.professional-mode {
+    font-family: 'Times New Roman', serif;
+    background: white !important;
+    color: black !important;
+}
+
+body.professional-mode * {
+    color: black !important;
+    background: transparent !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+}
+
+body.professional-mode .hero {
+    background: white !important;
+    padding: 2rem 0 !important;
+    min-height: auto !important;
+}
+
+body.professional-mode .hero::before {
+    display: none !important;
+}
+
+body.professional-mode .hero-content {
+    text-align: left !important;
+    grid-template-columns: 1fr !important;
+}
+
+body.professional-mode .hero-visual {
+    display: none !important;
+}
+
+body.professional-mode .hero-title .name {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    color: black !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+body.professional-mode .hero-title .title {
+    font-size: 1.5rem !important;
+    color: #666 !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+body.professional-mode .hero-subtitle {
+    font-size: 1rem !important;
+    color: #666 !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+}
+
+body.professional-mode .hero-stats,
+body.professional-mode .hero-cta,
+body.professional-mode .navbar,
+body.professional-mode .about-visual,
+body.professional-mode .tech-orbit,
+body.professional-mode .timeline::before,
+body.professional-mode .timeline-marker,
+body.professional-mode .company-logo,
+body.professional-mode .achievement-icon,
+body.professional-mode .contact-cta {
+    display: none !important;
+}
+
+body.professional-mode .section {
+    padding: 1rem 0 !important;
+}
+
+body.professional-mode .section-title {
+    font-size: 1.5rem !important;
+    color: black !important;
+    border-bottom: 2px solid black !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    text-align: left !important;
+}
+
+body.professional-mode .section-title::after {
+    display: none !important;
+}
+
+body.professional-mode .timeline {
+    max-width: none !important;
+}
+
+body.professional-mode .timeline-item {
+    padding-left: 0 !important;
+    margin-bottom: 1.5rem !important;
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+}
+
+body.professional-mode .timeline-item.featured {
+    background: #f9f9f9 !important;
+    border: 2px solid black !important;
+}
+
+body.professional-mode .company-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+}
+
+body.professional-mode .company-info h3 {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    color: black !important;
+}
+
+body.professional-mode .company-info h4 {
+    font-size: 1.1rem !important;
+    color: #666 !important;
+    font-style: italic !important;
+}
+
+body.professional-mode .duration {
+    font-size: 0.9rem !important;
+    color: #666 !important;
+}
+
+body.professional-mode .featured-badge {
+    background: black !important;
+    color: white !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.8rem !important;
+}
+
+body.professional-mode .achievements ul {
+    list-style: disc !important;
+    margin-left: 1.5rem !important;
+}
+
+body.professional-mode .achievements li::before {
+    display: none !important;
+}
+
+body.professional-mode .tech-stack {
+    display: none !important;
+}
+
+body.professional-mode .skills-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+}
+
+body.professional-mode .skill-category {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+}
+
+body.professional-mode .skill-category h3 {
+    font-size: 1.1rem !important;
+    color: black !important;
+    border-bottom: 1px solid #ccc !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+body.professional-mode .skill-items {
+    display: block !important;
+}
+
+body.professional-mode .skill-item {
+    display: inline !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    color: black !important;
+}
+
+body.professional-mode .skill-item::after {
+    content: ', ';
+}
+
+body.professional-mode .skill-item:last-child::after {
+    content: '';
+}
+
+body.professional-mode .achievements-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+}
+
+body.professional-mode .achievement-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+    text-align: left !important;
+}
+
+body.professional-mode .achievement-card h3 {
+    font-size: 1.1rem !important;
+    color: black !important;
+    margin-bottom: 0.5rem !important;
+}
+
+body.professional-mode .achievement-card p {
+    font-size: 0.9rem !important;
+    color: #666 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+body.professional-mode .achievement-link {
+    color: black !important;
+    text-decoration: underline !important;
+    font-size: 0.9rem !important;
+}
+
+body.professional-mode .contact {
+    background: white !important;
+    text-align: left !important;
+}
+
+body.professional-mode .contact-content {
+    grid-template-columns: 1fr !important;
+}
+
+body.professional-mode .contact-info {
+    display: block !important;
+}
+
+body.professional-mode .contact-item {
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+
+body.professional-mode .contact-item i {
+    display: none !important;
+}
+
+body.professional-mode .contact-item a {
+    color: black !important;
+    text-decoration: underline !important;
+}
+
+body.professional-mode .footer {
+    background: white !important;
+    border-top: 1px solid #ccc !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    font-size: 0.8rem !important;
+    color: #666 !important;
 } 
