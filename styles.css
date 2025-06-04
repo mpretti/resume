@@ -1060,11 +1060,35 @@ body,
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hide theme toggle on mobile */
+/* Mobile-friendly toggle buttons */
 @media (max-width: 768px) {
-    .theme-toggle,
+    .theme-toggle {
+        position: fixed;
+        top: auto;
+        bottom: 1rem;
+        right: 1rem;
+        transform: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        z-index: 1001;
+    }
+    
     .mode-toggle {
-        display: none;
+        position: fixed;
+        top: auto;
+        bottom: 1rem;
+        right: 4.5rem;
+        transform: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        z-index: 1001;
+    }
+    
+    .theme-toggle:hover,
+    .mode-toggle:hover {
+        transform: scale(1.1);
     }
 }
 
@@ -1321,4 +1345,45 @@ body.professional-mode .footer {
     padding: 1rem !important;
     font-size: 0.8rem !important;
     color: #666 !important;
+}
+
+/* Mobile-specific professional mode adjustments */
+@media (max-width: 768px) {
+    body.professional-mode .hero-title .name {
+        font-size: 2rem !important;
+    }
+    
+    body.professional-mode .hero-title .title {
+        font-size: 1.2rem !important;
+    }
+    
+    body.professional-mode .section-title {
+        font-size: 1.3rem !important;
+    }
+    
+    body.professional-mode .company-info h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    body.professional-mode .company-info h4 {
+        font-size: 1rem !important;
+    }
+    
+    body.professional-mode .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    body.professional-mode .timeline-item {
+        padding: 0.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    body.professional-mode .achievement-card {
+        padding: 0.75rem !important;
+    }
+    
+    /* Ensure toggle buttons don't interfere with content in professional mode */
+    body.professional-mode .footer {
+        padding-bottom: 4rem !important;
+    }
 } 

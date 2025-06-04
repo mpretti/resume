@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(printButton);
     }
 
-    // Add print button on larger screens
+    // Add print button on larger screens only (to avoid crowding mobile)
     if (window.innerWidth > 768) {
         addPrintStyles();
     }
@@ -321,18 +321,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(themeToggle);
     }
 
-    // Add theme toggle on larger screens
-    if (window.innerWidth > 768) {
-        initThemeToggle();
-    }
+    // Initialize theme toggle on all devices
+    initThemeToggle();
     
     // Initialize animated avatar
     initializeAnimatedAvatar();
     
-    // Initialize mode toggle
-    if (window.innerWidth > 768) {
-        initializeModeToggle();
-    }
+    // Initialize mode toggle on all devices
+    initializeModeToggle();
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
