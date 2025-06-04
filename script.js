@@ -284,34 +284,38 @@ document.addEventListener('DOMContentLoaded', function() {
         addPrintStyles();
     }
 
-    // Add theme toggle (bonus feature)
-    function addThemeToggle() {
+    // Theme toggle functionality with localStorage persistence
+    function initThemeToggle() {
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.body.classList.add('dark-theme');
+        }
+
+        // Create theme toggle button
         const themeToggle = document.createElement('button');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         themeToggle.className = 'theme-toggle';
-        themeToggle.style.cssText = `
-            position: fixed;
-            top: 50%;
-            right: 2rem;
-            transform: translateY(-50%);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            border: none;
-            background: var(--primary-color);
-            color: white;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        `;
+        themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+        themeToggle.title = 'Toggle dark/light mode';
+        
+        // Set initial icon based on current theme
+        const isDark = document.body.classList.contains('dark-theme');
+        themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         
         themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-theme');
+            const isDarkMode = document.body.classList.toggle('dark-theme');
             const icon = this.querySelector('i');
-            icon.className = document.body.classList.contains('dark-theme') 
-                ? 'fas fa-sun' 
-                : 'fas fa-moon';
+            
+            // Update icon
+            icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // Save preference to localStorage
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            
+            // Update aria-label for accessibility
+            this.setAttribute('aria-label', isDarkMode ? 'Switch to light mode' : 'Switch to dark mode');
         });
         
         document.body.appendChild(themeToggle);
@@ -319,8 +323,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add theme toggle on larger screens
     if (window.innerWidth > 768) {
-        addThemeToggle();
+        initThemeToggle();
     }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+            
+            // Update toggle button icon if it exists
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                const icon = themeToggle.querySelector('i');
+                const isDark = document.body.classList.contains('dark-theme');
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+    });
 });
 
 // Add service worker for offline functionality (optional)
