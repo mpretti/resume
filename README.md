@@ -4,7 +4,7 @@ A modern, responsive, and eye-catching professional resume website showcasing 25
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://yourusername.github.io/resume](https://yourusername.github.io/resume)
+Visit the live website: [https://mpretti.github.io/resume](https://mpretti.github.io/resume)
 
 ## ✨ Features
 
@@ -51,7 +51,7 @@ Visit the live website: [https://yourusername.github.io/resume](https://youruser
    - Select "Deploy from a branch"
    - Choose "main" branch and "/ (root)" folder
    - Click "Save"
-4. **Access Your Site**: Visit `https://yourusername.github.io/repository-name`
+4. **Access Your Site**: Visit `https://mpretti.github.io/resume`
 
 ## 📝 Customization Guide
 
