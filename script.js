@@ -294,31 +294,27 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('dark-theme');
         }
 
-        // Create theme toggle button
-        const themeToggle = document.createElement('button');
-        themeToggle.className = 'theme-toggle';
-        themeToggle.setAttribute('aria-label', 'Toggle dark mode');
-        themeToggle.title = 'Toggle dark/light mode';
-        
-        // Set initial icon based on current theme
-        const isDark = document.body.classList.contains('dark-theme');
-        themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        
-        themeToggle.addEventListener('click', function() {
-            const isDarkMode = document.body.classList.toggle('dark-theme');
-            const icon = this.querySelector('i');
+        // Find existing theme toggle button in header
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            // Set initial icon based on current theme
+            const isDark = document.body.classList.contains('dark-theme');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             
-            // Update icon
-            icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
-            
-            // Save preference to localStorage
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            
-            // Update aria-label for accessibility
-            this.setAttribute('aria-label', isDarkMode ? 'Switch to light mode' : 'Switch to dark mode');
-        });
-        
-        document.body.appendChild(themeToggle);
+            themeToggle.addEventListener('click', function() {
+                const isDarkMode = document.body.classList.toggle('dark-theme');
+                const icon = this.querySelector('i');
+                
+                // Update icon
+                icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+                
+                // Save preference to localStorage
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                
+                // Update aria-label for accessibility
+                this.setAttribute('aria-label', isDarkMode ? 'Switch to light mode' : 'Switch to dark mode');
+            });
+        }
     }
 
     // Initialize theme toggle on all devices
@@ -444,31 +440,29 @@ function initializeAnimatedAvatar() {
 function initializeModeToggle() {
     let isFunMode = true; // Default to fun mode
     
-    // Create mode toggle button
-    const modeToggle = document.createElement('button');
-    modeToggle.className = 'mode-toggle';
-    modeToggle.setAttribute('aria-label', 'Toggle fun/professional mode');
-    modeToggle.title = 'Switch between fun and professional resume formats';
-    modeToggle.innerHTML = '<i class="fas fa-briefcase"></i>';
-    
-    modeToggle.addEventListener('click', function() {
-        isFunMode = !isFunMode;
-        const icon = this.querySelector('i');
+    // Find existing mode toggle button in header
+    const modeToggle = document.querySelector('.mode-toggle');
+    if (modeToggle) {
+        // Set initial icon and state
+        modeToggle.innerHTML = '<i class="fas fa-briefcase"></i>';
         
-        if (isFunMode) {
-            // Switch to fun mode
-            document.body.classList.remove('professional-mode');
-            icon.className = 'fas fa-briefcase';
-            this.title = 'Switch to professional format';
-        } else {
-            // Switch to professional mode
-            document.body.classList.add('professional-mode');
-            icon.className = 'fas fa-palette';
-            this.title = 'Switch to fun format';
-        }
-    });
-    
-    document.body.appendChild(modeToggle);
+        modeToggle.addEventListener('click', function() {
+            isFunMode = !isFunMode;
+            const icon = this.querySelector('i');
+            
+            if (isFunMode) {
+                // Switch to fun mode
+                document.body.classList.remove('professional-mode');
+                icon.className = 'fas fa-briefcase';
+                this.title = 'Switch to professional format';
+            } else {
+                // Switch to professional mode
+                document.body.classList.add('professional-mode');
+                icon.className = 'fas fa-palette';
+                this.title = 'Switch to fun format';
+            }
+        });
+    }
 }
 
 // Add service worker for offline functionality (optional)
