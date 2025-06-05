@@ -352,63 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Animated Avatar Functionality
 function initializeAnimatedAvatar() {
-    const canvas = document.getElementById('realImageCanvas');
-    const ctx = canvas.getContext('2d');
     const animatedAvatar = document.querySelector('.animated-avatar');
-    
-    // Create a more detailed avatar using canvas
-    function drawAvatar() {
-        const size = 120;
-        ctx.clearRect(0, 0, size, size);
-        
-        // Background circle
-        const gradient = ctx.createLinearGradient(0, 0, size, size);
-        gradient.addColorStop(0, '#2563eb');
-        gradient.addColorStop(1, '#1e40af');
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(size/2, size/2, size/2, 0, 2 * Math.PI);
-        ctx.fill();
-        
-        // Face
-        ctx.fillStyle = '#f4d1ae';
-        ctx.beginPath();
-        ctx.arc(size/2, size/2 - 5, 35, 0, 2 * Math.PI);
-        ctx.fill();
-        
-        // Hair
-        ctx.fillStyle = '#8b4513';
-        ctx.beginPath();
-        ctx.arc(size/2, size/2 - 20, 30, Math.PI, 2 * Math.PI);
-        ctx.fill();
-        
-        // Eyes
-        ctx.fillStyle = '#000';
-        ctx.beginPath();
-        ctx.arc(size/2 - 10, size/2 - 10, 3, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(size/2 + 10, size/2 - 10, 3, 0, 2 * Math.PI);
-        ctx.fill();
-        
-        // Smile
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(size/2, size/2 - 5, 15, 0.2 * Math.PI, 0.8 * Math.PI);
-        ctx.stroke();
-        
-        // Body/Shirt
-        ctx.fillStyle = '#1f2937';
-        ctx.fillRect(size/2 - 25, size/2 + 25, 50, 35);
-        
-        // Tie
-        ctx.fillStyle = '#dc2626';
-        ctx.fillRect(size/2 - 5, size/2 + 25, 10, 25);
-    }
-    
-    // Draw the avatar initially
-    drawAvatar();
     
     let isShowingReal = false;
     let animationInterval;
@@ -441,23 +385,59 @@ function initializeAnimatedAvatar() {
     // Start the auto-flip animation
     startAutoFlip();
     
-    // Load real LinkedIn image into canvas
+    // Load and avatarize your profile image
     const img = new Image();
     img.crossOrigin = 'anonymous';
     img.onload = function() {
         const realCanvas = document.getElementById('realImageCanvas');
         const realCtx = realCanvas.getContext('2d');
-        realCtx.clearRect(0, 0, 120, 120);
+        const size = 120;
+        
+        realCtx.clearRect(0, 0, size, size);
+        realCtx.save();
+        
+        // Create circular clipping path
+        realCtx.beginPath();
+        realCtx.arc(size/2, size/2, size/2 - 4, 0, 2 * Math.PI);
+        realCtx.clip();
+        
+        // Calculate aspect ratio and positioning for proper cropping without distortion
+        const imgAspect = img.width / img.height;
+        let sourceX = 0, sourceY = 0, sourceWidth = img.width, sourceHeight = img.height;
+        
+        if (imgAspect > 1) {
+            // Image is wider than tall - crop sides, keep full height
+            sourceWidth = img.height; // Make it square by using height as width
+            sourceX = (img.width - sourceWidth) / 2; // Center the crop horizontally
+        } else {
+            // Image is taller than wide - crop top/bottom, keep full width  
+            sourceHeight = img.width; // Make it square by using width as height
+            sourceY = (img.height - sourceHeight) / 2; // Center the crop vertically
+        }
+        
+        // Draw the properly cropped square portion of the image
+        realCtx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, size, size);
+        realCtx.restore();
+        
+        // Add subtle border and shadow effect
         realCtx.save();
         realCtx.beginPath();
-        realCtx.arc(60, 60, 60, 0, 2 * Math.PI);
-        realCtx.clip();
-        realCtx.drawImage(img, 0, 0, 120, 120);
+        realCtx.arc(size/2, size/2, size/2 - 2, 0, 2 * Math.PI);
+        realCtx.strokeStyle = 'rgba(37, 99, 235, 0.3)';
+        realCtx.lineWidth = 3;
+        realCtx.stroke();
+        
+        // Add inner highlight
+        realCtx.beginPath();
+        realCtx.arc(size/2, size/2, size/2 - 5, 0, 2 * Math.PI);
+        realCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        realCtx.lineWidth = 1;
+        realCtx.stroke();
         realCtx.restore();
     };
     
-    // Use a placeholder for now - you can replace this with your actual LinkedIn image URL
-    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iNjAiIGZpbGw9IiMyNTYzZWIiLz4KPGNpcmNsZSBjeD0iNjAiIGN5PSI0NSIgcj0iMjAiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCA5NUMyMCA4MCA0MCA2NSA2MCA2NVM5MCA4MCA5MCA5NSIgZmlsbD0id2hpdGUiLz4KPHRleHQgeD0iNjAiIHk9IjEwNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TVA8L3RleHQ+Cjwvc3ZnPgo=';
+    // Use your actual profile picture
+    img.src = 'mike-pretti-profile.jpg';
 }
 
 // Fun/Professional Mode Toggle
