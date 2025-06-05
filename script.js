@@ -121,12 +121,74 @@ document.addEventListener('DOMContentLoaded', function() {
         statsObserver.observe(heroStats);
     }
 
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
+    // Enhanced parallax and fade effect for hero section
+    function handleHeroParallax() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        const heroContent = document.querySelector('.hero-content');
+        const isProfessionalMode = document.body.classList.contains('professional-mode');
+        
+        if (hero && heroContent) {
+            const heroHeight = hero.offsetHeight;
+            const scrollProgress = Math.min(scrolled / heroHeight, 1);
+            
+            // In professional mode, use more subtle effects
+            if (isProfessionalMode) {
+                // More aggressive parallax movement to get out of the way
+                const parallaxSpeed = 0.8;
+                hero.style.transform = `translateY(-${scrolled * parallaxSpeed}px)`;
+                
+                // Start with lower opacity and fade out more aggressively
+                const fadeStart = 0.1;
+                const fadeEnd = 0.5;
+                
+                let opacity = 0.85; // Start at lower opacity
+                if (scrollProgress > fadeStart) {
+                    const fadeProgress = (scrollProgress - fadeStart) / (fadeEnd - fadeStart);
+                    opacity = Math.max(0.05, 0.85 - (fadeProgress * 0.8));
+                }
+                
+                heroContent.style.opacity = opacity;
+                heroContent.style.transform = 'scale(1)'; // No scaling in professional mode
+                hero.style.filter = 'none'; // No blur in professional mode
+            } else {
+                // Full effects for fun mode
+                // More aggressive parallax movement - hero moves up and out of the way
+                const parallaxSpeed = 0.7;
+                hero.style.transform = `translateY(-${scrolled * parallaxSpeed}px)`;
+                
+                // Start with lower opacity and fade out more aggressively
+                const fadeStart = 0.05; // Start fading almost immediately
+                const fadeEnd = 0.4;    // Fully faded much earlier
+                
+                let opacity = 0.9; // Start at lower opacity
+                if (scrollProgress > fadeStart) {
+                    const fadeProgress = (scrollProgress - fadeStart) / (fadeEnd - fadeStart);
+                    opacity = Math.max(0, 0.9 - (fadeProgress * 0.9));
+                }
+                
+                heroContent.style.opacity = opacity;
+                
+                // Scale effect for depth
+                const scaleProgress = scrollProgress * 0.15;
+                heroContent.style.transform = `scale(${1 - scaleProgress})`;
+                
+                // Add blur effect for depth
+                const blurAmount = scrollProgress * 4;
+                hero.style.filter = `blur(${blurAmount}px)`;
+            }
+        }
+    }
+
+    // Throttled scroll handler for better performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                handleHeroParallax();
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 
@@ -258,19 +320,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add print functionality
-    function addPrintStyles() {
+    function addPrintButton() {
         const printButton = document.createElement('button');
         printButton.innerHTML = '<i class="fas fa-print"></i> Print Resume';
-        printButton.className = 'btn-secondary';
-        printButton.style.cssText = `
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            border-radius: 50px;
-            padding: 1rem;
-            box-shadow: var(--shadow-lg);
-        `;
+        printButton.className = 'print-button';
         
         printButton.addEventListener('click', function() {
             window.print();
@@ -279,10 +332,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(printButton);
     }
 
-    // Add print button on larger screens only (to avoid crowding mobile)
-    if (window.innerWidth > 768) {
-        addPrintStyles();
-    }
+    // Add print button on all screen sizes
+    addPrintButton();
 
     // Theme toggle functionality with localStorage persistence
     function initThemeToggle() {
