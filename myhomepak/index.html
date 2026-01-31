@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHomePak Kanban 🚀</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .kanban-column { min-height: 200px; }
+        .task-card { background: white; border-radius: 8px; padding: 12px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+        .task-card:hover { transform: translateY(-2px); transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .checkbox-done { text-decoration: line-through; color: #9ca3af; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <header class="mb-12 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-extrabold text-slate-900 flex items-center gap-3">
+                    🚀 MyHomePak <span class="text-blue-600">Command Center</span>
+                </h1>
+                <p class="text-slate-500 mt-2 italic">Official mission board for Bert Bot & Mike</p>
+            </div>
+            <div id="last-updated" class="text-sm text-slate-400"></div>
+        </header>
+
+        <div id="kanban-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Columns injected by JS -->
+        </div>
+    </div>
+
+    <script>
+        async function loadKanban() {
+            try {
+                // Try to load KANBAN.md from the same directory or root
+                const response = await fetch('../KANBAN.md');
+                const text = await response.text();
+                
+                const sections = text.split('##').slice(1);
+                const container = document.getElementById('kanban-container');
+                container.innerHTML = '';
+
+                sections.forEach(section => {
+                    const lines = section.trim().split('\n');
+                    const title = lines[0].trim();
+                    const tasks = lines.slice(1);
+
+                    const col = document.createElement('div');
+                    col.className = 'flex flex-col';
+                    
+                    let bgClass = 'bg-slate-200';
+                    if (title.includes('Backlog')) bgClass = 'bg-slate-200';
+                    if (title.includes('To Do')) bgClass = 'bg-blue-100';
+                    if (title.includes('In Progress')) bgClass = 'bg-amber-100';
+                    if (title.includes('Done')) bgClass = 'bg-green-100';
+
+                    col.innerHTML = `
+                        <div class="rounded-xl ${bgClass} p-4 flex-1">
+                            <h2 class="text-lg font-bold mb-4 flex items-center justify-between">
+                                ${title}
+                                <span class="text-xs font-normal opacity-50 bg-white/50 px-2 py-1 rounded-full">${tasks.filter(t => t.trim().startsWith('-')).length}</span>
+                            </h2>
+                            <div class="kanban-column">
+                                ${tasks.map(task => {
+                                    const cleanTask = task.trim();
+                                    if (!cleanTask.startsWith('-')) return '';
+                                    
+                                    const isDone = cleanTask.includes('[x]');
+                                    const taskText = cleanTask.replace(/^- \[[x ]\] /, '');
+                                    
+                                    return `
+                                        <div class="task-card">
+                                            <p class="${isDone ? 'checkbox-done' : ''}">${taskText}</p>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(col);
+                });
+
+                document.getElementById('last-updated').innerText = 'Last updated: ' + new Date().toLocaleString();
+            } catch (e) {
+                console.error('Error loading Kanban:', e);
+                document.getElementById('kanban-container').innerHTML = '<p class="text-red-500">Failed to load KANBAN.md. Make sure it exists in the repo root.</p>';
+            }
+        }
+
+        loadKanban();
+    </script>
+</body>
+</html>
