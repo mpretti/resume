@@ -8,12 +8,15 @@
 - [ ] Vehicle/Car image fetching for property details
 
 ## 🏗️ To Do
-- [x] Fix Browser System Dependencies (Requires `playwright install-deps` via sudo)
-- [x] Create automated "Health Check" screenshot of Login Page
 - [ ] Build a "Cursor-CLI" skill for faster building
 - [ ] Setup Supabase MCP server for direct DB access
+- [ ] Create specialized property-analysis prompt for PDF/Image intake
+- [ ] Design Mobile Landing Page for MyHomePak preview
 
 ## 🚀 In Progress
+- [x] Fix Browser System Dependencies (Requires `playwright install-deps` via sudo)
+- [x] Create automated "Health Check" screenshot of Login Page
+- [ ] Populating GitHub Kanban board with current mission state
 - [ ] Project Command Center Initialization
 
 ## ✅ Done
