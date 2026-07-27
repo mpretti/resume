@@ -660,6 +660,20 @@ body:not(.dark-theme) .hero-title .name::before {
     filter: brightness(0) invert(1);
 }
 
+.company-logo.service-zen {
+    background: linear-gradient(135deg, #0f766e, #14b8a6);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo.service-zen .text-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+}
+
 .company-logo.ppo { 
     background: linear-gradient(135deg, #4a90e2, #357abd); 
     padding: 0.25rem;
