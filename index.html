@@ -1,851 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Pretti - Technology Leader & Innovation Architect</title>
-    <meta name="description" content="Michael Pretti - 25+ years of technology leadership experience. CTO, Senior Software Engineer, Patent Holder. Expert in scaling startups and building world-class teams.">
-    <meta name="keywords" content="Michael Pretti, CTO, Senior Software Engineer, Technology Leader, Shopify Plus, Patent Holder, Full Stack Developer, Blockchain, Cryptocurrency, Trading, Java, Python, React, AWS">
-    <meta name="author" content="Michael Pretti">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mpretti.github.io/resume/">
-    <meta property="og:title" content="Michael Pretti - Technology Leader & Innovation Architect">
-    <meta property="og:description" content="25+ years transforming startups into industry leaders. Patent Holder. 2nd hire at Shopify Plus. Scaling teams from 2 to 200+ engineers.">
-    <meta property="og:image" content="https://mpretti.github.io/resume/og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mpretti.github.io/resume/">
-    <meta property="twitter:title" content="Michael Pretti - Technology Leader & Innovation Architect">
-    <meta property="twitter:description" content="25+ years transforming startups into industry leaders. Patent Holder. 2nd hire at Shopify Plus. Scaling teams from 2 to 200+ engineers.">
-    <meta property="twitter:image" content="https://mpretti.github.io/resume/og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232563eb'/><text x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-family='Arial, sans-serif' font-weight='bold'>MP</text></svg>">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2563eb">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael Pretti — Software Engineer & Technical Lead</title>
+  <meta name="description" content="Michael Pretti is a software engineer and technical lead in Waterloo, Ontario. Founder of Service Zen, previously Shopify Plus, Newton, and IBM.">
+  <meta name="author" content="Michael Pretti">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mpretti.github.io/resume/">
+  <meta property="og:title" content="Michael Pretti — Software Engineer & Technical Lead">
+  <meta property="og:description" content="25+ years building software, from financial systems and Shopify Plus to Service Zen.">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://mpretti.github.io/resume/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="name">Michael Pretti</span>
-                        <span class="title">Technology Leader & Innovation Architect</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        25+ years transforming startups into industry leaders • Patent Holder •
-                        <span class="highlight">Founder of Service Zen</span> •
-                        2nd hire at Shopify Plus · Scaling teams from 2 to 200+ engineers
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">25+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">17+</span>
-                            <span class="stat-label">Companies</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Patent</span>
-                        </div>
-                    </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Let's Build Something Amazing</a>
-                        <a href="#experience" class="btn-secondary">View My Journey</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="profile-card">
-                        <div class="profile-image-container">
-                            <div class="profile-image animated-avatar">
-                                <img src="avatar-ghimbli.png" alt="Michael Pretti Ghibli Avatar" class="avatar-image">
-                                <canvas id="realImageCanvas" width="120" height="120" class="real-image"></canvas>
-                            </div>
-                        </div>
-                        <div class="status-badge">
-                            <i class="fas fa-circle"></i>
-                            Open to Work
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="wordmark" href="#main" aria-label="Michael Pretti, introduction">mp<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#experience">Experience</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
     </header>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">MP</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-controls">
-                <button class="mode-toggle" aria-label="Toggle fun/professional mode" title="Switch between fun and professional styles">
-                    <i class="fas fa-briefcase"></i>
-                </button>
-                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+    <main id="main">
+      <section class="intro" aria-labelledby="name">
+        <p class="eyebrow">Software engineer &amp; technical lead</p>
+        <h1 id="name">Michael Pretti<span>.</span></h1>
+        <p class="intro-copy">I build software and lead engineering teams.</p>
+        <p class="intro-detail">Over 25 years, I’ve worked on financial systems, commerce, healthcare, and tools for small businesses. I’ve been an early hire, a CTO, and a founder. I still write code.</p>
+        <div class="intro-meta"><span>Waterloo, Ontario</span><span class="meta-divider" aria-hidden="true">/</span><a href="https://www.linkedin.com/in/mikepretti/">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/mpretti">GitHub <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <aside class="current" aria-label="Current project"><span class="eyebrow">Currently building</span><p><a href="https://service-zen.com">Service Zen <span aria-hidden="true">↗</span></a><span class="current-description">Software for running a home service business.</span></p></aside>
+      <section id="experience" class="section" aria-labelledby="experience-title">
+        <div class="section-heading"><h2 id="experience-title">Selected experience</h2><span class="section-note">1999 — present</span></div>
+        <article class="job">
+  <p class="job-date">2025 — Present</p>
+  <div class="job-body"><h3>Service Zen</h3><p class="job-role">Founder &amp; Technical Lead</p>
+  <ul><li>Building software for home service businesses: CRM, scheduling, quotes, invoices, payments, and marketing.</li><li>Built the React and TypeScript application, Express API, and integrations with Supabase, Convex, and Stripe Connect.</li><li>Added conversational and voice assistants, website analysis, and an authenticated MCP server for agent access.</li></ul>
+  <p class="job-stack">TypeScript · React · Node.js · Supabase · Convex · Stripe · AI / MCP</p></div>
+</article>
+<article class="job">
+  <p class="job-date">2024 — Present</p>
+  <div class="job-body"><h3>June Women’s Health</h3><p class="job-role">Founding Engineer</p>
+  <ul><li>Built a React and TypeScript application for women’s healthcare in Canada, with Supabase and PostgreSQL.</li><li>Integrated Fullscript, Practice Better, and Pocket Pills to support care and medication workflows.</li><li>Implemented personalized engagement and health assistant features.</li></ul>
+  <p class="job-stack">React · TypeScript · PostgreSQL · Supabase</p></div>
+</article>
+<article class="job">
+  <p class="job-date">Aug 2024 — Apr 2025</p>
+  <div class="job-body"><h3>Life Design Analysis</h3><p class="job-role">Chief Technology Officer</p>
+  <ul><li>Led engineering for life insurance sales software used by advisors, MGAs, and wealth management firms.</li><li>Modernized PHP services with TypeScript, added AI-assisted workflows and Microsoft BI reporting, and managed AWS infrastructure with Terraform.</li></ul>
+  <p class="job-stack">PHP · TypeScript · AWS · Terraform · Microsoft BI</p></div>
+</article>
+<article class="job">
+  <p class="job-date">Mar 2021 — Jan 2022</p>
+  <div class="job-body"><h3>Newton.co</h3><p class="job-role">Staff Software Engineer</p>
+  <ul><li>Added support for more than 40 cryptocurrencies and integrated Fireblocks for deposits and withdrawals.</li><li>Built logging across microservices and integrated Persona into identity verification workflows.</li></ul>
+  <p class="job-stack">Python · Node.js · AWS · Terraform · React Native</p></div>
+</article>
+<article class="job">
+  <p class="job-date">May 2020 — Nov 2020</p>
+  <div class="job-body"><h3>VendorPM</h3><p class="job-role">Chief Technology Officer</p>
+  <ul><li>Led product development for a property management platform with more than 10,000 vendors.</li><li>Designed the migration from MongoDB to PostgreSQL and built a vendor ranking system.</li></ul>
+  <p class="job-stack">PostgreSQL · MongoDB · GraphQL · React</p></div>
+</article>
+<article class="job">
+  <p class="job-date">May 2015 — Aug 2017</p>
+  <div class="job-body"><h3>Shopify Plus</h3><p class="job-role">Senior Software Engineer / Team Lead</p>
+  <ul><li>Joined as the second developer hired for Shopify Plus.</li><li>Built Amazon Webstore migration tools, merchant goal tracking in the Plus Account Centre, and sales prospecting tools.</li><li>Contributed to the Wholesale app and built desktop applications with Electron.</li></ul>
+  <p class="job-stack">Ruby on Rails · React · Electron · Kubernetes · Google Cloud</p></div>
+</article>
+        <details class="earlier"><summary>More experience <span class="expand-icon" aria-hidden="true">+</span></summary><div class="earlier-content"><article class="job compact"><p class="job-date">Dec 2017 — Apr 2018</p><div class="job-body"><h3>Coinvest</h3><p class="job-role">Full Stack Developer</p><p>Built a decentralized cryptocurrency trading platform, including ERC20 tokens and smart contracts.</p></div></article>
+<article class="job compact"><p class="job-date">2006 — 2020</p><div class="job-body"><h3>Ground Floor Trading</h3><p class="job-role">Owner</p><p>Built and operated algorithmic trading systems, exchange integrations, and risk management tools using Java, Python, MATLAB, and FIX.</p></div></article>
+<article class="job compact"><p class="job-date">Nov 2010 — Mar 2013</p><div class="job-body"><h3>P&amp;P Optica</h3><p class="job-role">Software Manager</p><p>Led software development for spectral analysis. Built Iris in Java and C++ and co-invented patented spectrometer calibration technology.</p></div></article>
+<article class="job compact"><p class="job-date">Jun 2006 — Jul 2007</p><div class="job-body"><h3>QuoteMedia</h3><p class="job-role">Senior Developer / Team Lead</p><p>Built real-time market alerts, financial web tools, and components of the Quotestream BlackBerry application.</p></div></article>
+<article class="job compact"><p class="job-date">Feb 2005 — Feb 2006</p><div class="job-body"><h3>Credit Union Central of BC</h3><p class="job-role">Senior Consultant</p><p>Developed online banking web services, secure SOAP messaging, and search for Canadian credit unions.</p></div></article>
+<article class="job compact"><p class="job-date">Jul 1999 — Mar 2004</p><div class="job-body"><h3>IBM</h3><p class="job-role">e-Business Software Engineer</p><p>Led development on Trade Innovator and built financial services, content management, and investor relations applications.</p></div></article></div></details>
+      </section>
+      <section id="background" class="section" aria-labelledby="background-title">
+        <div class="section-heading"><h2 id="background-title">Background</h2></div>
+        <div class="background-grid">
+          <div><h3>Tools &amp; technologies</h3><p>TypeScript, JavaScript, Python, Java, Ruby on Rails, React, and Node.js.</p><p>PostgreSQL, Redis, AWS, Google Cloud, Docker, Kubernetes, and Terraform. Recent work includes AI assistants, voice integrations, and MCP.</p></div>
+          <div><h3>Education</h3><p class="credential">University of Waterloo</p><p>Bachelor of Mathematics<br>Joint Honours in Computer Science and Combinatorics &amp; Optimization.</p></div>
+          <div class="patent"><h3>Patent</h3><p>Co-inventor, <a href="https://patents.justia.com/patent/9546904">US 9,546,904 <span aria-hidden="true">↗</span></a></p><p>Apparatus and method for optimizing data capture and data correction for spectroscopic analysis. Granted January 2017, with Olga Pawluczyk and Romuald Pawluczyk.</p></div>
         </div>
-    </nav>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">The Architect Behind the Code</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">
-                        I'm not just another developer—I'm a <strong>technology visionary</strong> who has spent over two decades
-                        turning ambitious ideas into market-dominating platforms. From being the <strong>2nd developer hired at Shopify Plus</strong>
-                        to founding <strong>Service Zen</strong> and my own trading firm, I've consistently delivered solutions that scale.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-rocket"></i>
-                            <div>
-                                <h4>Startup Accelerator</h4>
-                                <p>Transformed early-stage companies into industry leaders through strategic technical leadership</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-brain"></i>
-                            <div>
-                                <h4>Innovation Pioneer</h4>
-                                <p>Patent holder with deep expertise in emerging technologies from blockchain to AI</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Team Builder</h4>
-                                <p>Proven track record of scaling engineering teams and establishing world-class development practices</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="tech-orbit">
-                        <div class="tech-item">Java<span class="years">25+ yrs</span></div>
-                        <div class="tech-item">Python<span class="years">15+ yrs</span></div>
-                        <div class="tech-item">JavaScript<span class="years">20+ yrs</span></div>
-                        <div class="tech-item">TypeScript<span class="years">5+ yrs</span></div>
-                        <div class="tech-item">React<span class="years">8+ yrs</span></div>
-                        <div class="tech-item">AWS<span class="years">10+ yrs</span></div>
-                        <div class="tech-item">Blockchain<span class="years">7+ yrs</span></div>
-                        <div class="tech-item">Ruby on Rails<span class="years">12+ yrs</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section experience">
-        <div class="container">
-            <h2 class="section-title">Career Highlights</h2>
-            <div class="timeline">
-
-                <!-- Service Zen -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo service-zen">
-                                <img src="servicezen-leaf-mark.jpg" alt="Service Zen Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Founder &amp; Technical Lead</h3>
-                                <h4>Service Zen</h4>
-                                <span class="duration">2025 - Present</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Building an AI-native SaaS platform for home service businesses</p>
-                            <ul>
-                                <li>Founded and shipped an end-to-end platform covering CRM, jobs, quotes, invoices, scheduling, routing, payments, marketing, and analytics</li>
-                                <li>Architected a hybrid stack: React/TypeScript SPA, Express API, Supabase, Convex realtime sync, Stripe Connect, and multi-model AI assistants</li>
-                                <li>Shipped production AI features including conversational assistants, voice WebSocket bridges, website enrichment, and an authenticated MCP server for agent operations</li>
-                                <li>Built multi-surface production hosting across Vercel, DigitalOcean, Cloudflare Workers (public SP sites), and Capacitor mobile</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span class="tech">React</span>
-                                <span class="tech">TypeScript</span>
-                                <span class="tech">Node.js</span>
-                                <span class="tech">Supabase</span>
-                                <span class="tech">Convex</span>
-                                <span class="tech">Stripe Connect</span>
-                                <span class="tech">Gemini / OpenAI</span>
-                                <span class="tech">MCP</span>
-                                <span class="tech">Cloudflare</span>
-                                <span class="tech">Vercel</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- June Women's Health -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo june">
-                                <img src="june-health-logo.svg" alt="June Women's Health Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Founding Engineer</h3>
-                                <h4>June Women's Health</h4>
-                                <span class="duration">2024 - Present</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <div class="achievement-item">
-                                <span class="icon">🚀</span>
-                                <span>Architected React/TypeScript frontend with Supabase backend and PostgreSQL database</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">💊</span>
-                                <span>Integrated Full Script API for prescription management and delivery</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🔗</span>
-                                <span>Built seamless Practice Better integration for coordinated care workflows</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">📱</span>
-                                <span>Developed Pocket Pills integration for comprehensive medication management</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🤖</span>
-                                <span>Implemented AI-powered personalized engagement and health assistant features</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🌐</span>
-                                <span>Created responsive web application serving women across Canada</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech">React</span>
-                            <span class="tech">TypeScript</span>
-                            <span class="tech">Supabase</span>
-                            <span class="tech">PostgreSQL</span>
-                            <span class="tech">Full Script API</span>
-                            <span class="tech">Practice Better</span>
-                            <span class="tech">Pocket Pills</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Life Design Analysis -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo lda">
-                                <img src="life-design-analysis-logo.svg" alt="Life Design Analysis Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Chief Technology Officer</h3>
-                                <h4>Life Design Analysis</h4>
-                                <span class="duration">August 2024 - April 2025</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Leading technology transformation for cloud-based life insurance sales software</p>
-                            <ul>
-                                <li>Architected and implemented <strong>AI-powered workflow optimization</strong> reducing processing time by 40%</li>
-                                <li>Integrated advanced data analysis capabilities using <strong>Microsoft BI</strong> for enhanced reporting</li>
-                                <li>Modernized legacy PHP systems with TypeScript microservices architecture</li>
-                                <li>Deployed scalable infrastructure on <strong>AWS using Terraform</strong> for automated provisioning</li>
-                                <li>Streamlined internal workflows serving insurance advisors, MGAs, and wealth management firms</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>PHP</span><span>TypeScript</span><span>AWS</span><span>Terraform</span><span>Microsoft BI</span><span>Data Analysis</span><span>AI Integration</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Newton.co -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo newton">
-                                <img src="newton-logo.svg" alt="Newton Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Staff Software Engineer</h3>
-                                <h4>Newton.co</h4>
-                                <span class="duration">March 2021 - Jan 2022</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Led cryptocurrency platform expansion and team growth</p>
-                            <ul>
-                                <li>Added <strong>40+ new cryptocurrencies</strong> to existing platform</li>
-                                <li>Implemented secure crypto deposit/withdrawal system using Fireblocks</li>
-                                <li>Built comprehensive logging infrastructure across microservices</li>
-                                <li>Enhanced KYC processes with Persona integration</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Python</span><span>Node.js</span><span>AWS</span><span>Terraform</span><span>React Native</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Trading Firm -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo trading">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="company-info">
-                                <h3>Proprietary Trading Firm Owner</h3>
-                                <h4>Ground Floor Trading</h4>
-                                <span class="duration">2006 - 2020 (14 years)</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Built and operated successful algorithmic trading operation</p>
-                            <ul>
-                                <li>Developed sophisticated trading algorithms and risk management systems</li>
-                                <li>Managed portfolios worth <strong>tens of millions of dollars</strong></li>
-                                <li>Built custom trading platforms interfacing with major exchanges</li>
-                                <li>Achieved consistent profitability through quantitative strategies</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Java</span><span>Python</span><span>MATLAB</span><span>FIX Protocol</span><span>Real-time Systems</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- VendorPM -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo vendorpm">
-                                <img src="vendorpm-logo.webp" alt="VendorPM Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Chief Technology Officer</h3>
-                                <h4>VendorPM</h4>
-                                <span class="duration">May 2020 - Nov 2020</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Revolutionizing property management through technology</p>
-                            <ul>
-                                <li>Architected migration from MongoDB to PostgreSQL</li>
-                                <li>Led core product development for <strong>10,000+ vendor platform</strong></li>
-                                <li>Secured funding through investor and executive presentations</li>
-                                <li>Built industry-first ranking algorithm for vendor selection</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>PostgreSQL</span><span>MongoDB</span><span>GraphQL</span><span>React</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coinvest -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo coinvest">
-                                <span>₿</span>
-                            </div>
-                            <div class="company-info">
-                                <h3>Full Stack Developer</h3>
-                                <h4>Coinvest</h4>
-                                <span class="duration">Dec 2017 - Apr 2018</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Pioneering decentralized cryptocurrency trading platform</p>
-                            <ul>
-                                <li>Built world's first decentralized investment trading platform</li>
-                                <li>Designed and implemented ERC20 tokens and smart contracts</li>
-                                <li>Championed cryptocurrency adoption strategies</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Solidity</span><span>Ethereum</span><span>Node.js</span><span>Rails</span><span>AWS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Shopify -->
-                <div class="timeline-item featured">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo shopify">
-                                <i class="fab fa-shopify"></i>
-                            </div>
-                            <div class="company-info">
-                                <h3>Senior Software Engineer Team Lead</h3>
-                                <h4>Shopify Plus</h4>
-                                <span class="duration">May 2015 - Aug 2017</span>
-                                <span class="featured-badge">Key Hire #2</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">
-                                <strong>2nd key development hire</strong> for Shopify Plus, helping scale the team to 200+ people
-                            </p>
-                            <ul>
-                                <li>Built Amazon webstore migration tools serving <strong>Fortune 500 clients</strong></li>
-                                <li>Developed Instagram sales prospecting platform for sales team</li>
-                                <li>Championed merchant goal tracking for Shopify Plus Account Centre</li>
-                                <li>Created cross-platform desktop applications with Electron</li>
-                                <li>Core contributor to Wholesale app development</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Ruby on Rails</span><span>React</span><span>Electron</span><span>Kubernetes</span><span>GCP</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P&P Optica -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo ppo">
-                                <img src="ppo-logo.svg" alt="P&P Optica Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Software Manager</h3>
-                                <h4>P&P Optica</h4>
-                                <span class="duration">November 2010 - March 2013</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <div class="achievement-item">
-                                <span class="icon">🏆</span>
-                                <span>Co-invented patented spectral analysis technology for automated spectrometer calibration</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">👥</span>
-                                <span>Managed team of software developers creating leading-edge platform for spectral analysis</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">⚙️</span>
-                                <span>Architected and implemented Iris - Java/C++ software for acquiring and analyzing spectroscopic data</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🔧</span>
-                                <span>Managed IT infrastructure and operations for rapidly growing technology company</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech">Java</span>
-                            <span class="tech">C++</span>
-                            <span class="tech">Matlab</span>
-                            <span class="tech">jFreeChart</span>
-                            <span class="tech">PostgreSQL</span>
-                            <span class="tech">MariaDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- QuoteMedia Inc -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo quotemedia">
-                                <img src="quotemedia-logo.svg" alt="QuoteMedia Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Senior Developer – Team Lead</h3>
-                                <h4>QuoteMedia Inc</h4>
-                                <span class="duration">June 2006 - July 2007</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <div class="achievement-item">
-                                <span class="icon">🚨</span>
-                                <span>Created real-time alert system using JBoss Rules engine for UDP/TCP stock market data</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">⚡</span>
-                                <span>Developed Ajax-powered financial web tools with instant symbol lookup capabilities</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">📱</span>
-                                <span>Built key components of QuoteMedia's mobile Quotestream application for BlackBerry OS</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🔄</span>
-                                <span>Migrated backend applications from EJB 2.1 to EJB 3.0 with Hibernate integration</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech">Java</span>
-                            <span class="tech">JavaScript</span>
-                            <span class="tech">JBoss Rules</span>
-                            <span class="tech">AJAX</span>
-                            <span class="tech">Java ME</span>
-                            <span class="tech">BlackBerry OS</span>
-                            <span class="tech">Hibernate</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Credit Union Central of BC -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo central1">
-                                <img src="central1-logo.png" alt="Central 1 Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>Senior Consultant</h3>
-                                <h4>Credit Union Central of BC</h4>
-                                <span class="duration">February 2005 - February 2006</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <div class="achievement-item">
-                                <span class="icon">🔄</span>
-                                <span>Transformed online banking services to generic web services using Axis on WebLogic</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🔐</span>
-                                <span>Developed secure SOAP messaging for sensitive data transfer between credit unions</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">📝</span>
-                                <span>Created customized web forms for Canada's largest credit unions</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="icon">🔍</span>
-                                <span>Implemented site search functionality using Nutch and Lucene technologies</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech">WebLogic</span>
-                            <span class="tech">Java</span>
-                            <span class="tech">SOAP</span>
-                            <span class="tech">XML</span>
-                            <span class="tech">Lucene</span>
-                            <span class="tech">Oracle</span>
-                            <span class="tech">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IBM -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <div class="company-logo ibm">
-                                <img src="ibm-logo.png" alt="IBM Logo">
-                            </div>
-                            <div class="company-info">
-                                <h3>e-Business Software Engineer</h3>
-                                <h4>IBM</h4>
-                                <span class="duration">July 1999 - March 2004</span>
-                            </div>
-                        </div>
-                        <div class="achievements">
-                            <p class="role-description">Enterprise software development for Fortune 500 clients</p>
-                            <ul>
-                                <li>Team Development Lead for Trade Innovator platform</li>
-                                <li>Served major clients: TD Waterhouse, Dundee Securities, Western Financial</li>
-                                <li>Implemented content management systems for British Airways</li>
-                                <li>Redesigned IBM investor relations platform</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Java</span><span>WebSphere</span><span>DB2</span><span>SOAP</span><span>Enterprise Architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid-modern">
-                <div class="skill-category-modern languages">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Languages & Frameworks</h3>
-                    </div>
-                    <div class="skill-items-modern">
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Java</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Ruby on Rails</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">TypeScript</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">React</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern intermediate">
-                            <span class="skill-name">C/C++</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category-modern cloud">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & Infrastructure</h3>
-                    </div>
-                    <div class="skill-items-modern">
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">AWS</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Google Cloud</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Kubernetes</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Terraform</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Docker</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern intermediate">
-                            <span class="skill-name">Ansible</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category-modern data">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data & Analytics</h3>
-                    </div>
-                    <div class="skill-items-modern">
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">PostgreSQL</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">MySQL</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">MongoDB</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Redis</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">ElasticSearch</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern intermediate">
-                            <span class="skill-name">InfluxDB</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category-modern emerging">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Emerging Tech</h3>
-                    </div>
-                    <div class="skill-items-modern">
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Blockchain</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern expert">
-                            <span class="skill-name">Cryptocurrency</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">Smart Contracts</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern advanced">
-                            <span class="skill-name">DeFi</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-item-modern intermediate">
-                            <span class="skill-name">Machine Learning</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                        <div class="skill-item-modern intermediate">
-                            <span class="skill-name">AI Integration</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements">
-        <div class="container">
-            <h2 class="section-title">Notable Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achievement-card patent">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Patent Holder</h3>
-                    <p><strong>US Patent #9546904</strong> (Granted January 17, 2017)</p>
-                    <p>"Apparatus and method for optimizing data capture and data correction for spectroscopic analysis"</p>
-                    <p><em>Co-inventors: Olga Pawluczyk, Romuald Pawluczyk</em></p>
-                    <a href="https://patents.justia.com/patent/9546904" target="_blank" class="achievement-link">
-                        View Granted Patent <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="https://patents.justia.com/inventor/michael-pretti" target="_blank" class="achievement-link">
-                        All Patents <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-                <div class="achievement-card shopify-growth">
-                    <div class="achievement-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Shopify Plus Growth</h3>
-                    <p>As the <strong>2nd developer hire</strong>, helped scale the team from 2 to <strong>200+ engineers</strong></p>
-                    <p>Contributed to platform serving Fortune 500 brands like GE, Nestlé, and P&G</p>
-                </div>
-                <div class="achievement-card trading-success">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Trading Innovation</h3>
-                    <p>Developed proprietary trading strategy that generated <strong>$2M+ in profits</strong></p>
-                    <p>Built and managed algorithmic trading systems for 14+ years</p>
-                </div>
-                <div class="achievement-card education">
-                    <div class="achievement-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Academic Excellence</h3>
-                    <p><strong>University of Waterloo</strong></p>
-                    <p>Bachelor of Mathematics - Joint Honours Computer Science and Combinatorics & Optimization</p>
-                    <p>Maintained <strong>80%+ average</strong> throughout program</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Let's Build the Future Together</h2>
-            <div class="contact-content">
-                <div class="contact-text">
-                    <p class="contact-lead">
-                        Ready to transform your next big idea into reality? I bring 25+ years of proven experience 
-                        in scaling startups, building world-class teams, and delivering solutions that matter.
-                    </p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Waterloo, Ontario, Canada</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/mikepretti/" target="_blank">linkedin.com/in/mikepretti</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Open to: CTO, Founding Engineer, Staff/Principal Engineer, Engineering Manager roles</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-cta">
-                    <h3>Ready to Connect?</h3>
-                    <p>Let's discuss how I can help accelerate your technology vision</p>
-                    <a href="https://www.linkedin.com/in/mikepretti/" target="_blank" class="btn-primary">
-                        <i class="fab fa-linkedin"></i>
-                        Connect on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Michael Pretti. Built with passion and precision.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+      </section>
+      <section id="contact" class="contact" aria-labelledby="contact-title"><p class="eyebrow">Get in touch</p><h2 id="contact-title">Have something in mind?</h2><p>I’m open to conversations about engineering roles, technical leadership, and early-stage products.</p><a class="contact-link" href="https://www.linkedin.com/in/mikepretti/">Find me on LinkedIn <span aria-hidden="true">↗</span></a></section>
+    </main>
+    <footer><span>Michael Pretti</span><span>Waterloo, Ontario, Canada</span></footer>
+  </div>
 </body>
-</html> 
+</html>
